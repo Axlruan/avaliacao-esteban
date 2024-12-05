@@ -1,21 +1,39 @@
 using System;
 
-namespace ContarPalavras
+namespace VerificarDDD
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Digite uma frase:");
-            string frase = Console.ReadLine();
+            Console.WriteLine("Digite um código DDD:");
+            int ddd = Convert.ToInt32(Console.ReadLine());
 
-            Divide a frase em palavras usando espaços em branco como delimitadores
-            string[] palavras = frase.Split(new char[] { ' ', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            string cidade;
 
-            Conta o número de palavras
-            int numeroDePalavras = palavras.Length;
+            switch (ddd)
+            {
+                case 61:
+                    cidade = "Brasília";
+                    break;
+                case 71:
+                    cidade = "Salvador";
+                    break;
+                case 11:
+                    cidade = "São Paulo";
+                    break;
+                case 21:
+                    cidade = "Rio de Janeiro";
+                    break;
+                case 32:
+                    cidade = "Juiz de Fora";
+                    break;
+                default:
+                    cidade = "DDD não cadastrado";
+                    break;
+            }
 
-            Console.WriteLine($"A frase contém {numeroDePalavras} palavras.");
+            Console.WriteLine(cidade);
 
             Console.WriteLine("Pressione qualquer tecla para sair.");
             Console.ReadKey();
