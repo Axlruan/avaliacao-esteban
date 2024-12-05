@@ -1,0 +1,32 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Lê o valor inteiro
+        Console.Write("Digite um valor inteiro (0 < N < 1000000): ");
+        int N = int.Parse(Console.ReadLine());
+
+        Verifica se o valor está no intervalo permitido
+        if (N > 0 && N < 1000000)
+        {
+            Console.WriteLine(N); Imprime o valor lido
+
+            Array de notas disponíveis
+            int[] notas = { 100, 50, 20, 10, 5, 2, 1 };
+
+            Calcula a quantidade mínima de notas
+            foreach (int nota in notas)
+            {
+                int quantidade = N / nota; Calcula o número de notas
+                Console.WriteLine($"{quantidade} nota(s) de R$ {nota},00");
+                N %= nota; Atualiza o valor restante
+            }
+        }
+        else
+        {
+            Console.WriteLine("Valor fora do intervalo permitido.");
+        }
+    }
+}
